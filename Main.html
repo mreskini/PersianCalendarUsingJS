@@ -1,0 +1,117 @@
+<html>
+    <!-- Coded by Mohammad Reza Eskini on 4 - 26 - 2020 -->
+    <head>
+        <style>
+            @font-face {
+                font-family: 'IranYekan';
+                font-style: normal;
+                font-weight: bold;
+                src: url('font/iranyekanwebboldfanum.eot');
+                src: url('font/iranyekanwebboldfanum.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+                url('font/iranyekanwebboldfanum.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+                url('font/iranyekanwebboldfanum.ttf') format('truetype');
+            }
+            @font-face {
+                font-family: "Classino_Icons";
+                src: url("http://classino.com/css/panel/panel_icon/Classino_Icons.eot?93703f");
+                src: url("http://classino.com/css/panel/panel_icon/Classino_Icons.eot?93703f#iefix") format("embedded-opentype"), url("/css/panel/panel_icon/Classino_Icons.ttf?93703f") format("truetype"), url("/css/panel/panel_icon/Classino_Icons.woff?93703f") format("woff"), url("/css/panel/panel_icon/Classino_Icons.svg?93703f#Classino_Icons") format("svg");
+                font-weight: normal;
+                font-style: normal;
+                font-display: block;
+                }
+            *{
+                color: #47404f;
+                font-family: 'IranYekan', Nunito, sans-serif;
+            }
+            .desktop{
+                margin: 0px;
+                padding: 0px;
+                width: 50%;
+                float: left;
+            }
+            .desktop .row1{
+                list-style-type: none;
+                overflow: hidden;
+                height: auto;
+                padding-top: 1%;
+                padding-bottom: 1%;
+            }
+            .desktop .row1 li{
+                width: 30%;
+                float: left;
+            }
+            .desktop .row1 li:nth-child(1){
+                padding: 0px;
+                box-shadow: 0 4px 20px 1px rgba(0, 0, 0, .06), 0 1px 4px rgba(0, 0, 0, .08);
+                margin: 0px;
+                background: white;
+                width: 20%;
+                display: inline-block;
+                border-radius: 10px;
+                margin-right: 2%;
+                height: 200px;
+            }
+            .desktop .row1 li:nth-child(1) p{
+                text-align: center;
+            }
+            .desktop .calender p:nth-child(1){
+                background-color: #ea3b5a ;
+                color: white;
+                padding: 0px;
+                margin: 0px;
+                border-radius: 10px 10px 0px 0px;
+                padding: 15px;
+            }
+            .desktop .calender p:nth-child(2){
+                color: #ea3b5a;
+                font-weight: bold;
+                font-size: 45px;
+                padding: 0px;
+                padding-top: 10px;
+                margin: 0px;
+            }
+            .desktop .calender p:nth-child(3){
+                font-weight: bold;
+                font-size: 20px;
+                padding: 0px;
+                margin: 0px;
+                padding-bottom:20px ;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="desktop">
+            <ol class="row1">
+                <li>
+                    <div class="calender">
+                        <p id="month">فروردین </p>
+                        <p id="dayNum"></p>
+                        <p id="dayWord">چهارشنبه</p>
+                   </div>
+                </li>
+            </ol>
+    </body>
+    <script>
+        var date = new Date().toLocaleDateString('fa-IR');
+        var enDay = new Date().getDay();
+        var array = (date).split('/');
+            y = array[0];
+            m = array[1];
+            d = array[2];
+        document.getElementById('dayNum').innerHTML = array[2];
+        if(array[1] == '۱')document.getElementById('month').innerHTML = "فرودین";
+        if(array[1] == '۲')document.getElementById('month').innerHTML = "اردیبهشت";
+        if(array[1] == '۳')document.getElementById('month').innerHTML = "خرداد";
+        if(array[1] == '۴')document.getElementById('month').innerHTML = "تیر";
+        if(array[1] == '۵')document.getElementById('month').innerHTML = "مرداد";
+        if(array[1] == '۶')document.getElementById('month').innerHTML = "شهریور";
+        if(array[1] == '۷')document.getElementById('month').innerHTML = "مهر";
+        if(array[1] == '۸')document.getElementById('month').innerHTML = "آبان";
+        if(array[1] == '۹')document.getElementById('month').innerHTML = "آذر";
+        if(array[1] == '۱۰')document.getElementById('month').innerHTML = "دی";
+        if(array[1] == '۱۱')document.getElementById('month').innerHTML = "بهمن";
+        if(array[1] == '۱۲')document.getElementById('month').innerHTML = "اسفند";
+        var day = ['یک‌شنبه', 'دو شنبه', 'سه شنبه', 'چهار شنبه', 'پنج', 'جمعه', 'شنبه'];
+        document.getElementById('dayWord').innerHTML = day[enDay];
+    </script>
+</html>
