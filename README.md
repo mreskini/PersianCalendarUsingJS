@@ -1,4 +1,5 @@
-hello every body
-this is a very simple en to fa persian calendar using js
+hello every body\n
+this is a very simple en to fa  calendar using js
 I considered it useful and decided to share it 
+thanks for spending time
 
